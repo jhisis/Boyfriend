@@ -63,3 +63,19 @@ button {
     border-radius: 15px;
     border: 2px solid #ff4b2b;
 }
+
+@keyframes flotar {
+    0% { transform: translateY(110vh) rotate(0deg); opacity: 0; }
+    20% { opacity: 1; }
+    100% { transform: translateY(-20vh) rotate(360deg); }
+}
+
+.foto-voladora {
+    position: absolute;
+    width: 120px; /* Tamaño de la foto */
+    border: 5px solid white;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    z-index: 999;
+    animation: flotar 6s linear forwards;
+    pointer-events: none; /* Para que no bloqueen los clics */
+}
