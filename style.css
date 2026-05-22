@@ -26,6 +26,34 @@ body {
     z-index: 1;
 }
 
+/* Normalización para móviles */
+* {
+    -webkit-tap-highlight-color: transparent; /* Quita el recuadro azul al tocar */
+    box-sizing: border-box;
+}
+
+input, button {
+    -webkit-appearance: none; /* Elimina estilos nativos de iOS */
+    appearance: none;
+    border-radius: 0; /* Asegura que no se deformen los bordes */
+}
+
+/* Ajuste para que el Login no se desborde en pantallas pequeñas */
+#login-box {
+    width: 85% !important; /* En celular ocupa el 85% del ancho */
+    max-width: 350px;      /* Pero no más de 350px */
+}
+
+/* Mejora para los personajes en celular */
+@media (max-width: 600px) {
+    .character {
+        width: 120px !important; /* Más pequeños para que no tapen el login */
+        bottom: 10px !important;
+    }
+    #sally { left: 5px !important; }
+    #rayo { right: 5px !important; }
+}
+
 #sally { left: 20px; }
 #rayo { right: 20px; }
 
