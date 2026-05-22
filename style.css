@@ -61,6 +61,68 @@ body {
     pointer-events: none;
 }
 
+/* Estilo general del login */
+#login-box {
+    background: #fffdf5; /* Color papel viejo/retro */
+    padding: 2.5rem;
+    border-radius: 25px;
+    border: 8px solid #a0522d; /* Borde estilo madera/óxido */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5), inset 0 0 10px rgba(0,0,0,0.1);
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+    z-index: 10;
+}
+
+#login-box h2 {
+    color: #b22222; /* Rojo fuego */
+    text-transform: uppercase;
+    font-family: 'Impact', sans-serif;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+/* Mejora de las cajas de texto */
+input {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border: 3px solid #d2b48c;
+    border-radius: 12px;
+    font-size: 16px;
+    box-sizing: border-box;
+    background: #fdf5e6;
+    transition: 0.3s;
+}
+
+input:focus {
+    border-color: #b22222;
+    outline: none;
+    box-shadow: 0 0 8px rgba(178, 34, 34, 0.3);
+}
+
+/* El botón con estilo "Racing" */
+button {
+    background: #b22222;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 15px;
+    transition: 0.3s;
+    text-transform: uppercase;
+    box-shadow: 0 5px 15px rgba(178, 34, 34, 0.4);
+}
+
+button:hover {
+    background: #8b0000;
+    transform: scale(1.05);
+}
+
 /* Responsivo para móviles */
 @media (max-width: 768px) {
     .character { width: 120px; } /* Más pequeños en celular */
