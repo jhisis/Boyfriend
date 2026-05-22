@@ -1,129 +1,92 @@
-body {
-    background: #eecda3;
-    margin: 0;
-    height: 100vh;
-    display: flex;
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center;     /* Centra verticalmente */
-    overflow: hidden;
-    position: relative;
-    font-family: sans-serif;
-}
-
+/* Reset y Base */
 html, body {
     margin: 0;
     padding: 0;
-    height: 100%; /* Asegura que el cuerpo ocupe toda la pantalla */
+    height: 100%;
     width: 100%;
-}
-
-body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: #eecda3;
     display: flex;
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center;     /* Centra verticalmente */
-    position: relative;
-    font-family: sans-serif;
+    justify-content: center;
+    align-items: center;
     overflow: hidden;
 }
 
-/* Contenedor del login centrado */
+/* El Login: Estilo Letrero Retro */
 #login-box {
-    background: rgba(255, 255, 255, 0.9);
-    padding: 2rem;
-    border-radius: 20px;
-    border: 5px solid #8b4513;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 30px;
+    border: 6px solid #8b4513;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4), inset 0 0 20px rgba(0,0,0,0.1);
     text-align: center;
-    width: 90%;
-    max-width: 400px;
-    z-index: 10;
-}
-
-/* Personajes en los costados */
-.character {
-    position: absolute;
-    width: 250px; /* Tamaño moderado */
-    height: auto;
-    z-index: 5;
-    pointer-events: none;
-}
-
-#rayo { right: 5%; bottom: 10%; }
-#sally { left: 5%; bottom: 10%; }
-
-.character {
-    position: absolute;
-    width: 25vw; /* Esto significa 25% del ancho de la pantalla, siempre será proporcional */
-    max-width: 250px; /* Pero nunca será más grande de 250px */
-    height: auto;
-    z-index: 5;
-    pointer-events: none;
-}
-
-/* Estilo general del login */
-#login-box {
-    background: #fffdf5; /* Color papel viejo/retro */
-    padding: 2.5rem;
-    border-radius: 25px;
-    border: 8px solid #a0522d; /* Borde estilo madera/óxido */
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5), inset 0 0 10px rgba(0,0,0,0.1);
-    text-align: center;
-    width: 90%;
-    max-width: 400px;
+    width: 350px;
     z-index: 10;
 }
 
 #login-box h2 {
-    color: #b22222; /* Rojo fuego */
-    text-transform: uppercase;
     font-family: 'Impact', sans-serif;
-    letter-spacing: 2px;
-    margin-bottom: 20px;
+    color: #cc0000;
+    font-size: 28px;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 0px #ffd700;
 }
 
-/* Mejora de las cajas de texto */
+/* Inputs mejorados */
 input {
     width: 100%;
     padding: 15px;
-    margin: 10px 0;
-    border: 3px solid #d2b48c;
-    border-radius: 12px;
+    margin-bottom: 15px;
+    border: 2px solid #ccc;
+    border-radius: 50px;
     font-size: 16px;
     box-sizing: border-box;
-    background: #fdf5e6;
+    outline: none;
     transition: 0.3s;
 }
 
 input:focus {
-    border-color: #b22222;
-    outline: none;
-    box-shadow: 0 0 8px rgba(178, 34, 34, 0.3);
+    border-color: #cc0000;
+    box-shadow: 0 0 10px rgba(204, 0, 0, 0.2);
 }
 
-/* El botón con estilo "Racing" */
+/* BOTÓN REDISEÑADO: Estilo "Piston Cup" */
 button {
-    background: #b22222;
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(180deg, #ff4500, #b22222);
     color: white;
     border: none;
-    padding: 15px 30px;
     border-radius: 50px;
     font-size: 18px;
     font-weight: bold;
-    cursor: pointer;
-    width: 100%;
-    margin-top: 15px;
-    transition: 0.3s;
     text-transform: uppercase;
-    box-shadow: 0 5px 15px rgba(178, 34, 34, 0.4);
+    cursor: pointer;
+    box-shadow: 0 8px 0 #8b0000; /* Efecto 3D */
+    transition: 0.2s;
+    margin-top: 10px;
 }
 
-button:hover {
-    background: #8b0000;
-    transform: scale(1.05);
+button:active {
+    box-shadow: 0 2px 0 #8b0000;
+    transform: translateY(6px); /* Efecto de presionado */
 }
 
-/* Responsivo para móviles */
-@media (max-width: 768px) {
-    .character { width: 120px; } /* Más pequeños en celular */
+/* Imágenes decorativas */
+.character {
+    position: absolute;
+    width: 200px;
+    height: auto;
+    z-index: 5;
+    pointer-events: none;
+}
+
+#rayo { right: 5%; bottom: 5%; }
+#sally { left: 5%; bottom: 5%; }
+
+/* Responsive */
+@media (max-width: 600px) {
+    #login-box { width: 85%; padding: 20px; }
+    .character { width: 100px; }
 }
