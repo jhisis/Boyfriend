@@ -1,74 +1,33 @@
-html, body {
-    margin: 0; padding: 0; height: 100%;
-    background: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
-    display: flex; justify-content: center; align-items: center;
-    font-family: 'Segoe UI', sans-serif;
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #eecda3;
+    font-family: sans-serif;
+    overflow: hidden;
 }
 
 #login-box {
-    background: rgba(255, 255, 255, 0.7); /* Efecto cristal */
-    backdrop-filter: blur(15px);
-    padding: 40px;
-    border-radius: 25px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-    text-align: center;
-    width: 350px;
-}
-
-#login-box h2 {
-    color: #333;
-    font-weight: 800;
-    margin-bottom: 30px;
-    letter-spacing: -1px;
-}
-
-input {
-    width: 100%;
-    padding: 18px;
-    margin-bottom: 20px;
-    border: none;
-    border-radius: 15px;
-    background: rgba(255, 255, 255, 0.8);
-    box-shadow: inset 5px 5px 10px #d1d1d1, inset -5px -5px 10px #ffffff;
-    outline: none;
-    font-size: 16px;
-}
-
-/* BOTÓN MODERNO - Gradiente suave y sombra elegante */
-button {
-    width: 100%;
-    padding: 18px;
-    background: linear-gradient(to right, #ff416c, #ff4b2b);
-    border: none;
-    border-radius: 15px;
-    color: white;
-    font-weight: bold;
-    font-size: 16px;
-    cursor: pointer;
-    transition: 0.4s;
-    box-shadow: 0 10px 20px rgba(255, 75, 43, 0.3);
-}
-
-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 15px 25px rgba(255, 75, 43, 0.4);
-}
-
-.estacion-card {
     background: white;
-    padding: 40px;
+    padding: 30px;
     border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    border-top: 15px solid #cc0000; /* La línea de la pista */
-    animation: fadeIn 0.5s;
+    text-align: center;
+    width: 300px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+.character {
+    position: absolute;
+    width: 200px;
+    bottom: 20px;
+    z-index: 1;
 }
 
-.character { position: absolute; width: 220px; z-index: 1; pointer-events: none; }
-#rayo { right: 5%; bottom: 5%; }
-#sally { left: 5%; bottom: 5%; }
+#sally { left: 20px; }
+#rayo { right: 20px; }
+
+input { width: 90%; padding: 10px; margin: 10px 0; }
+button { padding: 10px 20px; cursor: pointer; }
