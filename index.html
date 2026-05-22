@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruta 66</title>
+    <style>
+        body { background: #fdf5e6; font-family: sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; }
+        #login-box { background: white; padding: 2rem; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); text-align: center; width: 90%; max-width: 400px; }
+        #app-box { display: none; width: 90%; max-width: 600px; text-align: center; }
+        input { width: 100%; padding: 12px; margin: 10px 0; border: 2px solid #ddd; border-radius: 8px; box-sizing: border-box; }
+        button { background: #e63946; color: white; border: none; padding: 12px 20px; border-radius: 8px; cursor: pointer; width: 100%; font-weight: bold; }
+        .track { position: relative; height: 10px; background: #8b4513; margin: 100px 0; display: flex; justify-content: space-between; align-items: center; padding: 0 20px; }
+        #car { position: absolute; font-size: 2.5rem; transition: left 1.5s ease-in-out; top: -50px; left: 0; }
+        .station { width: 30px; height: 30px; background: #e63946; border-radius: 50%; cursor: pointer; border: 3px solid #fff; }
+        #modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.8); align-items: center; justify-content: center; z-index: 100; }
+        .modal-content { background: white; padding: 20px; border-radius: 15px; width: 80%; max-width: 400px; text-align: center; }
+        img { width: 100%; border-radius: 10px; }
+    </style>
+</head>
+<body>
+
+    <div id="login-box">
+        <h2>Ingreso</h2>
+        <input type="text" id="user" placeholder="EL DIA DEL SI">
+        <input type="password" id="pass" placeholder="Contraseña">
+        <button onclick="check()">Entrar</button>
+    </div>
+
+    <div id="app-box">
+        <div class="track">
+            <div id="car">🏎️</div>
+            <div class="station" onclick="show(0)"></div>
+            <div class="station" onclick="show(1)"></div>
+            <div class="station" onclick="show(2)"></div>
+        </div>
+    </div>
+
+    <div id="modal" onclick="hide()">
+        <div class="modal-content">
+            <img id="m-img" src="https://via.placeholder.com/300" alt="Foto">
+            <p id="m-text">Aquí va tu frase especial</p>
+        </div>
+    </div>
+
+    <script>
+        function check() {
+            if(document.getElementById('user').value === "NOVIO" && document.getElementById('pass').value === "VIERNES01") {
+                document.getElementById('login-box').style.display = 'none';
+                document.getElementById('app-box').style.display = 'block';
+            } else { alert("Datos incorrectos"); }
+        }
+        function show(i) {
+            document.getElementById('car').style.left = (i * 45) + "%";
+            document.getElementById('modal').style.display = 'flex';
+        }
+        function hide() { document.getElementById('modal').style.display = 'none'; }
+    </script>
+</body>
+</html>
