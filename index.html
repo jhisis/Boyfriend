@@ -4,20 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <title>Radiator Springs</title>
 </head>
 <body>
-    <img src="images/RAYO MCQUEEN PRINCIPAL.png" id="rayo" class="character">
     <img src="images/SALLY.png" id="sally" class="character">
+    <img src="images/RAYO MCQUEEN PRINCIPAL.png" id="rayo" class="character">
 
     <div id="login-box">
         <h2>Radiator Springs</h2>
-        <input type="text" id="user" placeholder="Usuario">
-        <input type="password" id="pass" placeholder="Contraseña">
+        <input type="text" id="user" placeholder="USUARIO">
+        <input type="password" id="pass" placeholder="CONTRASEÑA">
         <button onclick="check()">¡Arrancar motor!</button>
     </div>
 
-    <div id="dashboard" style="display: none; text-align: center;">
-        <h1>¡Bienvenido a la Ruta 66!</h1>
+    <div id="dashboard" style="display: none;">
+        <div id="pantalla-pregunta">
+            <h2 style="color: #333; font-size: 1.5rem; margin-bottom: 20px;">
+                ¿Estás dispuesto a recorrer no solo esta corta pista, si no a recorrer tu vida conmigo y perdonarnos las 70 veces 7 que sean necesarias?
+            </h2>
+            <button onclick="iniciarRecorrido()" style="background: #28a745; border: none; padding: 15px 30px; color: white; border-radius: 50px; cursor: pointer; font-weight: bold;">
+                SÍ
+            </button>
+        </div>
+        <div id="contenedor-estaciones" style="display: none; padding: 20px;"></div>
     </div>
 
     <script src="script.js"></script>
