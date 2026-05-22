@@ -1,21 +1,25 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
+    <title>Ruta 66</title>
 </head>
 <body>
 
-    <!-- Personajes de fondo -->
-    <img src="img/RAYO MCQUEEN PRINCIPAL.png" id="rayomcqueen" class="character">
-    <img src="img/SALLY.png" id="sally" class="character">
+    <img src="images/RAYO MCQUEEN PRINCIPAL.png" id="rayo" class="character">
+    <img src="images/SALLY.png" id="sally" class="character">
 
     <div id="login-box">
-        <h2>¡Bienvenido a Radiator Springs!</h2>
-        <p class="pista">Pista: EL DIA DEL SI</p>
+        <h2>Radiator Springs</h2>
         <input type="text" id="user" placeholder="Usuario">
         <input type="password" id="pass" placeholder="Contraseña">
-        <button onclick="check()">¡Arrancar motor!</button>
+        <button onclick="check()">Entrar</button>
     </div>
+
+    <div id="dashboard" style="display: none;">
+        <h1>¡Cuchau!</h1>
+        </div>
 
     <script src="script.js"></script>
 </body>
