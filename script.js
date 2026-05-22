@@ -65,54 +65,30 @@ function siguienteEstacion() {
 }
 
 
-// Estas son las fotos que tienes en tu carpeta images/
-const imagenes = [
-    'BESO.jpeg', 
-    'LUNA.jpeg', 
-    'MERCADO.jpeg', 
-    'MIRADOR1.jpeg', 
-    'MIRADOR2.jpeg', 
-    'PUENTE.jpeg', 
-    'SELFIE.jpeg', 
-    'SELFIE2.jpeg', 
-    'SELFIE3.jpeg', 
-    'VIDEOLLAMADA.jpeg', 
-    'VIDEOLLAMADA2.jpeg'
-];
+function iniciarMosaicoDeFotos() {
+    const imagenes = [
+        'BESO.jpeg', 'LUNA.jpeg', 'MERCADO.jpeg', 'MIRADOR1.jpeg', 
+        'MIRADOR2.jpeg', 'PUENTE.jpeg', 'SELFIE.jpeg', 'SELFIE2.jpeg', 
+        'SELFIE3.jpeg', 'VIDEOLLAMADA.jpeg', 'VIDEOLLAMADA2.jpeg'
+    ];
 
-function cargarEstacion(i) {
-    const contenedor = document.getElementById('estacion-content');
-    if (i < estaciones.length) {
-        contenedor.innerHTML = `
-            <h2>${estaciones[i].titulo}</h2>
-            <p>${estaciones[i].texto}</p>
-            <button onclick="siguienteEstacion()" style="background: #ff416c; color: white; border: none; padding: 10px 20px; border-radius: 10px; cursor: pointer;">Siguiente →</button>
-        `;
-    } else {
-        // Al llegar a la meta:
-        contenedor.innerHTML = `<h2>¡Meta Alcanzada!</h2><p>Gracias por recorrer este camino conmigo.</p>`;
-        iniciarLluviaDeFotos(); // Llama a la función de las fotos
-    }
-}
+    // Ocultar la pista para que el mosaico sea el protagonista
+    document.getElementById('contenedor-estaciones').style.display = 'none';
 
-function iniciarLluviaDeFotos() {
-    // Vamos a mostrar 10 fotos de tu lista
-    for (let i = 0; i < 10; i++) {
+    imagenes.forEach((foto, index) => {
         setTimeout(() => {
             const img = document.createElement('img');
-            // Usamos la carpeta 'images/' y el nombre exacto de tu archivo
-            img.src = 'images/' + imagenes[i % imagenes.length];
-            img.className = 'foto-voladora';
+            img.src = 'images/' + foto;
+            img.className = 'foto-polaroid';
             
-            // Posición aleatoria horizontal
-            img.style.left = Math.random() * 80 + 'vw';
-            // Retraso para que no salgan todas a la vez
-            img.style.animationDelay = (i * 0.4) + 's';
+            // Posicionamiento calculado para que se dispersen (evitando el centro)
+            const posX = (index % 2 === 0) ? (index * 5) : (80 - index * 5);
+            const posY = (index * 8); 
+            
+            img.style.left = posX + 'vw';
+            img.style.top = posY + 'vh';
             
             document.body.appendChild(img);
-            
-            // Eliminar la foto después de que termine la animación (6 segundos)
-            setTimeout(() => img.remove(), 6000);
-        }, i * 500);
-    }
+        }, index * 400); // Aparecen una a una con suavidad
+    });
 }
