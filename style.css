@@ -52,6 +52,15 @@ body {
 #rayo { right: 5%; bottom: 10%; }
 #sally { left: 5%; bottom: 10%; }
 
+.character {
+    position: absolute;
+    width: 25vw; /* Esto significa 25% del ancho de la pantalla, siempre será proporcional */
+    max-width: 250px; /* Pero nunca será más grande de 250px */
+    height: auto;
+    z-index: 5;
+    pointer-events: none;
+}
+
 /* Responsivo para móviles */
 @media (max-width: 768px) {
     .character { width: 120px; } /* Más pequeños en celular */
