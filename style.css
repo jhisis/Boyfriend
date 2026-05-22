@@ -1,27 +1,16 @@
 body {
-    background: #eecda3; /* Tono desierto */
-    background: linear-gradient(to bottom, #d2b48c, #eecda3);
+    background: #eecda3;
     margin: 0;
-    font-family: 'Arial', sans-serif;
     height: 100vh;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center;     /* Centra verticalmente */
     overflow: hidden;
+    position: relative;
+    font-family: sans-serif;
 }
 
-/* Decoración de personajes */
-.character {
-    position: absolute;
-    width: 150px;
-    z-index: 0;
-    opacity: 0.9;
-}
-
-#mate { bottom: 20px; left: 5%; }
-#sally { bottom: 20px; right: 5%; }
-#guido { top: 20px; right: 10%; width: 100px; }
-
+/* Contenedor del login centrado */
 #login-box {
     background: rgba(255, 255, 255, 0.9);
     padding: 2rem;
@@ -31,56 +20,22 @@ body {
     text-align: center;
     width: 90%;
     max-width: 400px;
-    z-index: 1;
-
+    z-index: 10;
 }
 
-/* Estilo del contenedor principal */
-body {
-    background: #d2b48c; /* Color arena */
-    margin: 0;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden; /* Evita que salgan barras de desplazamiento */
-    position: relative;
-}
-
-/* Estilo para las imágenes decorativas */
-.decor-img {
-    position: fixed;
-    bottom: 0;
-    width: 300px; /* Tamaño grande y bonito */
+/* Personajes en los costados */
+.character {
+    position: absolute;
+    width: 250px; /* Tamaño moderado */
     height: auto;
-    z-index: 0;
-    pointer-events: none; /* Para que no estorben si hace clic sobre ellas */
+    z-index: 5;
+    pointer-events: none;
 }
 
-#img-rayo {
-    right: 0; /* Rayo a la derecha */
-}
+#rayo { right: 5%; bottom: 10%; }
+#sally { left: 5%; bottom: 10%; }
 
-#img-mate {
-    left: 0; /* Mate a la izquierda */
+/* Responsivo para móviles */
+@media (max-width: 768px) {
+    .character { width: 120px; } /* Más pequeños en celular */
 }
-
-/* El cuadro de login se mantiene al frente */
-#login-box {
-    background: rgba(255, 255, 255, 0.95);
-    padding: 2rem;
-    border-radius: 20px;
-    border: 5px solid #8b4513;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
-    text-align: center;
-    width: 90%;
-    max-width: 400px;
-    z-index: 1; /* Esto asegura que el login esté siempre adelante */
-}
-
-/* Responsive: en celulares pequeños, hacemos las imágenes más chicas */
-@media (max-width: 600px) {
-    .decor-img { width: 150px; }
-}
-
-.pista { font-style: italic; color: #8b4513; margin-bottom: 10px; }
