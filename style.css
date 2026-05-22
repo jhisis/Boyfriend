@@ -28,7 +28,7 @@ html, body {
     text-shadow: 2px 2px 0px #ffd700;
 }
 
-/* Inputs */
+/* Inputs mejorados */
 input {
     width: 100%;
     padding: 15px;
@@ -38,9 +38,15 @@ input {
     font-size: 16px;
     box-sizing: border-box;
     outline: none;
+    transition: 0.3s;
 }
 
-/* BOTÓN ESTILO PISTON CUP */
+input:focus {
+    border-color: #cc0000;
+    box-shadow: 0 0 10px rgba(204, 0, 0, 0.2);
+}
+
+/* BOTÓN REDISEÑADO: Estilo "Piston Cup" */
 button {
     width: 100%;
     padding: 15px;
@@ -54,6 +60,7 @@ button {
     cursor: pointer;
     box-shadow: 0 8px 0 #8b0000;
     transition: 0.2s;
+    margin-top: 10px;
 }
 
 button:active {
@@ -61,7 +68,7 @@ button:active {
     transform: translateY(6px);
 }
 
-/* Imágenes */
+/* Imágenes decorativas */
 .character {
     position: absolute;
     width: 200px;
@@ -72,3 +79,9 @@ button:active {
 
 #rayo { right: 5%; bottom: 5%; }
 #sally { left: 5%; bottom: 5%; }
+
+/* Responsive */
+@media (max-width: 600px) {
+    #login-box { width: 85%; padding: 20px; }
+    .character { width: 100px; }
+}
