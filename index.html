@@ -1,45 +1,30 @@
-<body>
-    <img src="images/RAYO MCQUEEN PRINCIPAL.png" id="rayo" class="character">
-    <img src="images/SALLY.png" id="sally" class="character">
-
-    <div id="login-box">
-        <h2>Radiator Springs</h2>
-        <input type="text" id="user" placeholder="Usuario">
-        <input type="password" id="pass" placeholder="Contraseña">
-        <button onclick="check()">¡Arrancar motor!</button>
-    </div>
-
-<div id="login-box">
-    <h2>Radiator Springs</h2>
-    <input type="text" id="user" placeholder="USUARIO">
-    <input type="password" id="pass" placeholder="CONTRASEÑA">
-    <button onclick="check()">¡Arrancar motor!</button>
-</div>
-
-<div id="login-box">
-    <h2>Radiator Springs</h2>
-    <input type="text" id="user" placeholder="USUARIO">
-    <input type="password" id="pass" placeholder="CONTRASEÑA">
-    <button onclick="check()">¡Arrancar motor!</button>
-</div>
-
-<div id="dashboard" style="display: none;">
-    <div id="pantalla-pregunta">
-        <h2 style="color: #cc0000; font-family: Impact, sans-serif;">
-            ¿Estás dispuesto a recorrer no solo esta corta pista, si no a recorrer tu vida conmigo y perdonarnos las 70 veces 7 que sean necesarias?
-        </h2>
-        <button onclick="iniciarRecorrido()" style="background: #28a745; padding: 15px 30px; color: white; border: none; border-radius: 50px; cursor: pointer;">
-            SÍ
-        </button>
-    </div>
-</div>
-
-
-    <head>
+<!DOCTYPE html>
+<html lang="es">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    </head>
+    <title>Ruta 66</title>
+</head>
+<body>
+    <img src="images/SALLY.png" id="sally" class="character">
+    <img src="images/RAYO MCQUEEN PRINCIPAL.png" id="rayo" class="character">
+
+    <div id="login-box">
+        <h2>Radiator Springs</h2>
+        <input type="text" id="user" placeholder="USUARIO">
+        <input type="password" id="pass" placeholder="CONTRASEÑA">
+        <button onclick="check()">¡Arrancar motor!</button>
+    </div>
+
+    <div id="dashboard" style="display: none;">
+        <div id="pantalla-pregunta">
+            <h2>¿Estás dispuesto a recorrer no solo esta corta pista, si no a recorrer tu vida conmigo y perdonarnos las 70 veces 7 que sean necesarias?</h2>
+            <button onclick="iniciarRecorrido()">SÍ</button>
+        </div>
+        <div id="contenedor-estaciones" style="display: none;"></div>
+    </div>
 
     <script src="script.js"></script>
 </body>
+</html>
