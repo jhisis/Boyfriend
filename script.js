@@ -17,14 +17,34 @@ function iniciarRecorrido() {
 }
 
 const estaciones = [
-    { titulo: "Estación 1: Salida", texto: "Todo comienza con el amor de Dios. ¿Listo para arrancar?" },
-    { titulo: "Estación 2: El Taller", texto: "El perdón es nuestro mantenimiento diario (70x7)." },
-    { titulo: "Estación 3: Combustible", texto: "Nuestra oración nos mantiene en marcha." },
-    { titulo: "Estación 4: Curva Peligrosa", texto: "Si nos desviamos, Su palabra nos guía." },
-    { titulo: "Estación 5: Meta", texto: "Nuestro destino es una vida eterna juntos." }
+    { titulo: "Estación 1: El Inicio", texto: "Nuestro viaje comienza aquí. Todo motor necesita una guía divina." },
+    { titulo: "Estación 2: El Taller del Perdón", texto: "70 veces 7. Aquí aprendemos que el perdón es nuestra mejor herramienta." },
+    { titulo: "Estación 3: Combustible", texto: "La oración es nuestra parada para recargar energía y seguir adelante." },
+    { titulo: "Estación 4: Navegando Curvas", texto: "Unidos en la tormenta, nada nos detiene. ¡Seguimos acelerando!" },
+    { titulo: "Estación 5: Horizonte Eterno", texto: "Nuestra meta final es el amor eterno. ¿Estamos listos?" }
 ];
 
 let indiceActual = 0;
+
+function iniciarRecorrido() {
+    // 1. Ocultar pregunta
+    document.getElementById('pantalla-pregunta').style.display = 'none';
+    
+    // 2. Mostrar la estructura de la pista que definimos en HTML
+    const contenedorPista = document.getElementById('contenedor-estaciones');
+    contenedorPista.style.display = 'block';
+    
+    // 3. Inyectar el diseño de la pista
+    contenedorPista.innerHTML = `
+        <div class="pista-container">
+            <div id="estacion-content" class="estacion-box">
+                </div>
+        </div>
+    `;
+    
+    // 4. Cargar la primera estación
+    cargarEstacion(0);
+}
 
 function cargarEstacion(i) {
     const contenedor = document.getElementById('estacion-content');
@@ -32,7 +52,7 @@ function cargarEstacion(i) {
         contenedor.innerHTML = `
             <h2>${estaciones[i].titulo}</h2>
             <p>${estaciones[i].texto}</p>
-            <button onclick="siguienteEstacion()">Siguiente →</button>
+            <button onclick="siguienteEstacion()" style="margin-top:15px; cursor:pointer;">Siguiente Estación →</button>
         `;
     } else {
         contenedor.innerHTML = `<h2>¡Meta Alcanzada!</h2><p>Gracias por recorrer este camino conmigo.</p>`;
@@ -42,11 +62,4 @@ function cargarEstacion(i) {
 function siguienteEstacion() {
     indiceActual++;
     cargarEstacion(indiceActual);
-}
-
-// Modifica tu función iniciarRecorrido para que llame a la primera
-function iniciarRecorrido() {
-    document.getElementById('pantalla-pregunta').style.display = 'none';
-    document.getElementById('contenedor-estaciones').style.display = 'block';
-    cargarEstacion(0); // Llama a la primera estación
 }
