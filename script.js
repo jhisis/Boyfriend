@@ -10,4 +10,15 @@ function check() {
     } else {
         alert("¡Esa no es la ruta correcta!");
     }
+
+    function iniciarRecorrido() {
+    // Ocultamos la pregunta
+    document.getElementById('pantalla-pregunta').style.display = 'none';
+    
+    // Mostramos el contenedor donde irán las estaciones
+    document.getElementById('contenedor-estaciones').style.display = 'block';
+    
+    // Aquí podemos disparar la lógica para cargar las 5 estaciones
+    console.log("El usuario aceptó recorrer la vida juntos.");
+}
 }
