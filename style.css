@@ -1,61 +1,42 @@
+/* Limpieza total */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
 body {
-    margin: 0;
-    padding: 0;
     height: 100vh;
+    background: #eecda3;
+    font-family: sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #eecda3;
-    font-family: sans-serif;
+    position: relative; /* Permite posicionar personajes */
     overflow: hidden;
 }
 
+/* El Login centrado */
 #login-box {
     background: white;
     padding: 30px;
-    border-radius: 20px;
+    border-radius: 25px;
+    width: 90%;
+    max-width: 350px;
     text-align: center;
-    width: 300px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    z-index: 10;
 }
 
+/* Personajes: Uso de posiciones fijas para que no se muevan */
 .character {
     position: absolute;
-    width: 200px;
+    width: 150px; /* Tamaño base */
     bottom: 20px;
-    z-index: 1;
+    z-index: 5;
 }
 
-/* Normalización para móviles */
-* {
-    -webkit-tap-highlight-color: transparent; /* Quita el recuadro azul al tocar */
-    box-sizing: border-box;
+#sally { left: 10px; }
+#rayo { right: 10px; }
+
+/* Ajuste móvil para que no se encimen */
+@media (max-width: 480px) {
+    .character { width: 100px; }
+    #login-box { padding: 20px; }
 }
-
-input, button {
-    -webkit-appearance: none; /* Elimina estilos nativos de iOS */
-    appearance: none;
-    border-radius: 0; /* Asegura que no se deformen los bordes */
-}
-
-/* Ajuste para que el Login no se desborde en pantallas pequeñas */
-#login-box {
-    width: 85% !important; /* En celular ocupa el 85% del ancho */
-    max-width: 350px;      /* Pero no más de 350px */
-}
-
-/* Mejora para los personajes en celular */
-@media (max-width: 600px) {
-    .character {
-        width: 120px !important; /* Más pequeños para que no tapen el login */
-        bottom: 10px !important;
-    }
-    #sally { left: 5px !important; }
-    #rayo { right: 5px !important; }
-}
-
-#sally { left: 20px; }
-#rayo { right: 20px; }
-
-input { width: 90%; padding: 10px; margin: 10px 0; }
-button { padding: 10px 20px; cursor: pointer; }
