@@ -52,10 +52,15 @@ function cargarEstacion(i) {
         contenedor.innerHTML = `
             <h2>${estaciones[i].titulo}</h2>
             <p>${estaciones[i].texto}</p>
-            <button onclick="siguienteEstacion()" style="margin-top:15px; cursor:pointer;">Siguiente Estación →</button>
+            <button onclick="siguienteEstacion()">Siguiente →</button>
         `;
     } else {
-        contenedor.innerHTML = `<h2>¡Meta Alcanzada!</h2><p>Gracias por recorrer este camino conmigo.</p>`;
+        // En la meta, limpiamos el texto y lanzamos el mosaico
+        document.getElementById('pantalla-pregunta').innerHTML = `
+            <h2>¡Meta Alcanzada!</h2>
+            <p>Gracias por recorrer este camino conmigo.</p>
+        `;
+        iniciarMosaicoDeFotos();
     }
 }
 
