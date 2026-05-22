@@ -2,59 +2,41 @@ html, body {
     margin: 0; padding: 0; height: 100%;
     background: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
     display: flex; justify-content: center; align-items: center;
-    font-family: 'Segoe UI', sans-serif;
+    font-family: 'Segoe UI', sans-serif; overflow: hidden;
 }
 
 #login-box {
-    background: rgba(255, 255, 255, 0.7); /* Efecto cristal */
+    background: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(15px);
     padding: 40px;
     border-radius: 25px;
     border: 1px solid rgba(255, 255, 255, 0.3);
     box-shadow: 0 15px 35px rgba(0,0,0,0.1);
     text-align: center;
-    width: 350px;
-}
-
-#login-box h2 {
-    color: #333;
-    font-weight: 800;
-    margin-bottom: 30px;
-    letter-spacing: -1px;
+    width: 90%;
+    max-width: 350px;
+    z-index: 10;
 }
 
 input {
-    width: 100%;
-    padding: 18px;
-    margin-bottom: 20px;
-    border: none;
-    border-radius: 15px;
+    width: 100%; padding: 15px; margin-bottom: 15px;
+    border: none; border-radius: 15px;
     background: rgba(255, 255, 255, 0.8);
     box-shadow: inset 5px 5px 10px #d1d1d1, inset -5px -5px 10px #ffffff;
-    outline: none;
-    font-size: 16px;
+    box-sizing: border-box;
 }
 
-/* BOTÓN MODERNO - Gradiente suave y sombra elegante */
 button {
-    width: 100%;
-    padding: 18px;
+    width: 100%; padding: 15px;
     background: linear-gradient(to right, #ff416c, #ff4b2b);
-    border: none;
-    border-radius: 15px;
-    color: white;
-    font-weight: bold;
-    font-size: 16px;
-    cursor: pointer;
-    transition: 0.4s;
-    box-shadow: 0 10px 20px rgba(255, 75, 43, 0.3);
+    border: none; border-radius: 15px; color: white;
+    font-weight: bold; cursor: pointer;
 }
 
-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 15px 25px rgba(255, 75, 43, 0.4);
-}
+.character { position: absolute; width: 180px; bottom: 10px; z-index: 5; pointer-events: none; }
+#rayo { right: 10px; }
+#sally { left: 10px; }
 
-.character { position: absolute; width: 220px; z-index: 1; pointer-events: none; }
-#rayo { right: 5%; bottom: 5%; }
-#sally { left: 5%; bottom: 5%; }
+@media (max-width: 480px) {
+    .character { width: 100px; }
+}
