@@ -55,6 +55,20 @@ button:hover {
     box-shadow: 0 15px 25px rgba(255, 75, 43, 0.4);
 }
 
+.estacion-card {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    border-top: 15px solid #cc0000; /* La línea de la pista */
+    animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 .character { position: absolute; width: 220px; z-index: 1; pointer-events: none; }
 #rayo { right: 5%; bottom: 5%; }
 #sally { left: 5%; bottom: 5%; }
