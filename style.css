@@ -40,3 +40,26 @@ button {
 @media (max-width: 480px) {
     .character { width: 100px; }
 }
+
+.pista-container {
+    background: #333; /* El asfalto */
+    border-left: 10px dashed #fff;
+    border-right: 10px dashed #fff;
+    padding: 40px;
+    margin: 20px auto;
+    border-radius: 10px;
+    max-width: 500px;
+    min-height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+.estacion-box {
+    background: rgba(0,0,0,0.6);
+    padding: 20px;
+    border-radius: 15px;
+    border: 2px solid #ff4b2b;
+}
